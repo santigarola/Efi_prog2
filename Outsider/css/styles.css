@@ -118,3 +118,128 @@ body {
         padding-left: 5%;
     }
 }
+
+
+/* productos prueba */
+
+
+/* Sección de productos moderna (Uiverse + Bulma) */
+#productos {
+  background-color: #cec9c3;
+  padding-top: 6rem;
+  padding-bottom: 10rem;
+}
+
+/* Contenedor general centrado */
+.wrapper {
+  width: 100%;
+  height: 500px; /* altura carrusel */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  perspective: 1200px; /* efecto 3D */
+}
+
+.inner {
+   --w: 180px;
+  --h: 250px;
+  --translateZ: 290px; /* distancia con el centro */
+  --rotateX: -8deg;   /* inclinación */
+  --perspective: 1500px; /*efecto de profundidad */
+  width: var(--w);
+  height: var(--h);
+  position: absolute;
+  transform-style: preserve-3d;
+  animation: rotating 25s linear infinite;
+}
+
+@keyframes rotating {
+  from {
+    transform: perspective(var(--perspective)) rotateX(var(--rotateX)) rotateY(0deg);
+  }
+  to {
+    transform: perspective(var(--perspective)) rotateX(var(--rotateX)) rotateY(360deg);
+  }
+}
+
+.card {
+  position: absolute;
+  width: var(--w);
+  height: var(--h);
+  border: 2px solid rgba(var(--color-card), 0.8);
+  border-radius: 12px;
+  overflow: hidden;
+  transform: rotateY(calc((360deg / var(--quantity)) * var(--index)))
+    translateZ(var(--translateZ));
+  transition: transform 0.5s ease;
+}
+
+.img {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+.img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.9);
+  transition: transform 0.3s ease;
+}
+.card:hover img {
+  transform: scale(1.5);
+}
+
+/* prueba boton buy */
+
+/* Información sobre cada producto dentro del carrusel */
+.card-info {
+  position: absolute;
+  bottom: -6px;
+  left: 0;
+  width: 100%;
+  background: rgba(228, 225, 225, 0.9);
+  padding: 0.5rem;
+  text-align: center;
+  font-size: 0.9rem;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.product-name {
+  font-weight: 600;
+  color: #000;
+  margin-bottom: 0.3rem;
+  font-size: 0.9rem;
+}
+
+.buy-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.price {
+  font-weight: bold;
+  color: #ff6b6b;
+  font-size: 0.9rem;
+}
+
+.buy-btn {
+  background-color: #000;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 0.3rem 0.7rem;
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.buy-btn:hover {
+  background-color: #ff6b6b;
+  color: #fff;
+  transform: scale(1.05);
+}
+
+
