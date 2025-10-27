@@ -242,4 +242,64 @@ body {
   transform: scale(1.05);
 }
 
+/* === SECCIÓN CONTACTO === */
+#contacto {
+  background-color: #fff;
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+}
+
+#contacto .title {
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+#contacto .glass {
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(12px);
+  border-radius: 15px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+#contacto input,
+#contacto textarea {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+#contacto input:focus,
+#contacto textarea:focus {
+  border-color: #ff6b6b;
+  box-shadow: 0 0 5px rgba(255, 107, 107, 0.5);
+}
+
+#contacto button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(255, 107, 107, 0.7);
+}
+
+#contacto .glass {
+  animation: fadeInUp 1s ease;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+/* Responsivo */
+@media (max-width: 768px) {
+  #contacto .column.is-half {
+    width: 100%;
+  }
+}
 
