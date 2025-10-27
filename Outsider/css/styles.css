@@ -212,7 +212,7 @@ body {
   margin-bottom: 0.3rem;
   font-size: 0.9rem;
 }
-
+Contacto
 .buy-row {
   display: flex;
   align-items: center;
@@ -303,3 +303,61 @@ body {
   }
 }
 
+
+/* Seccion de VIDEOS */
+
+#multimedia {
+  background-color: #1a1a1a;
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+  overflow: hidden;
+}
+
+#multimedia .title {
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 3rem !important;
+}
+
+#video-carousel .item:not(.is-active) {
+  transform: scale(0.8);
+  opacity: 0.4;
+}
+
+#video-carousel .item.is-active {
+  transform: scale(1);
+  opacity: 1;
+  box-shadow: 0 10px 30px rgba(255, 107, 107, 0.4);
+  border: 2px solid #ff6b6b;
+}
+
+#video-carousel .item {
+  transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+  padding: 0.5rem;
+}
+
+#video-carousel .item video {
+  border-radius: 12px !important;
+}
+
+#video-carousel .carousel-nav {
+  background-color: transparent;
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  color: white;
+  width: 50px;
+  height: 50px;
+}
+
+#video-carousel .carousel-nav:hover {
+  background-color: #ff6b6b;
+  border-color: #ff6b6b;
+  transform: scale(1.1);
+}
+
+.carousel-nav.is-prev {
+  left: 20px;
+}
+.carousel-nav.is-next {
+  right: 20px;
+}

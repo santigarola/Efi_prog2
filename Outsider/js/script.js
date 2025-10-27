@@ -1,5 +1,6 @@
-// Toggle del navbar burger en móviles
 document.addEventListener('DOMContentLoaded', () => {
+    
+    // Toggle del navbar burger en móviles
     const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
     if ($navbarBurgers.length > 0) {
         $navbarBurgers.forEach(el => {
@@ -22,4 +23,11 @@ document.addEventListener('DOMContentLoaded', () => {
     });
     document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
 
+    bulmaCarousel.attach('#video-carousel', {
+        slidesToScroll: 1,
+        slidesToShow: 3,
+        loop: true,
+        autoplay: true,
+        autoplaySpeed: 4000,
+    });
 });
