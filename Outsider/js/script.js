@@ -31,3 +31,13 @@ document.addEventListener('DOMContentLoaded', () => {
         autoplaySpeed: 4000,
     });
 });
+
+// Efecto parallax al mover el mouse
+const hero = document.querySelector(".hero-content");
+document.addEventListener("mousemove", (e) => {
+    const moveX = (e.clientX - window.innerWidth / 2) * 0.02;
+    const moveY = (e.clientY - window.innerHeight / 2) * 0.02;
+    hero.style.transform = `translate(${moveX}px, ${moveY}px)`;
+});
+
+

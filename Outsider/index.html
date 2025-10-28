@@ -1,234 +1,230 @@
 <!DOCTYPE html>
 <html lang="es">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>OUTSIDER</title>
-        <!-- Bulma CSS -->
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma-carousel@4.0.3/dist/css/bulma-carousel.min.css">
-        <!-- Google Fonts para tipografía moderna -->
-        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
-        <!-- Font Awesome para iconos -->
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-        <link rel="stylesheet" href="css/styles.css">
-        <link rel="icon" type="image/png" href="img/Logo 6 - negro.png">
-    </head>
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>OUTSIDER</title>
+      <!-- Bulma CSS -->
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma-carousel@4.0.3/dist/css/bulma-carousel.min.css">
+      <!-- Google Fonts para tipografía moderna -->
+      <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+      <!-- Font Awesome para iconos -->
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+      <link rel="stylesheet" href="css/styles.css">
+      <link rel="icon" type="image/png" href="img/Logo 6 - negro.png">
+  </head>
 
-    <body>
+  <body>
+      <!-- Navbar -->
+      <nav class="navbar is-fixed-top" role="navigation" aria-label="main navigation">
+          <div class="navbar-brand">
+            <a class="navbar-item" href="#">
+              <img src="img/logo 5 - negro.png" alt="OUTSIDER Logo" style="height: 40px;">
+            </a>
+            <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+              <span aria-hidden="true"></span>
+              <span aria-hidden="true"></span>
+              <span aria-hidden="true"></span>
+            </a>
+          </div>
 
-        <!-- Navbar -->
-        <nav class="navbar is-fixed-top" role="navigation" aria-label="main navigation">
-            <div class="navbar-brand">
-                <a class="navbar-item" href="#">
-                    <img src="img/logo 5 - negro.png" alt="OUTSIDER Logo" style="height: 40px;">
-                </a>
-                <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
-                    <span aria-hidden="true"></span>
-                    <span aria-hidden="true"></span>
-                    <span aria-hidden="true"></span>
-                </a>
+          <div id="navbarBasicExample" class="navbar-menu">
+            <div class="navbar-start">
+              <!-- Menú desplegable Shop Now -->
+              <div class="navbar-item has-dropdown is-hoverable">
+                <a class="navbar-link hover-scale">Shop Now</a>
+                <div class="navbar-dropdown">
+                  <a class="navbar-item">Hombres</a>
+                  <a class="navbar-item">Mujeres</a>
+                  <a class="navbar-item">Accesorios</a>
+                  <a class="navbar-item">Ofertas</a>
+                </div>
+              </div>
+              <a class="navbar-item hover-scale">News</a>
             </div>
 
-            <div id="navbarBasicExample" class="navbar-menu">
-                <div class="navbar-start">
-                    <a class="navbar-item hover-scale" href="#">Hombres</a>
-                    <a class="navbar-item hover-scale" href="#">Mujeres</a>
-                    <a class="navbar-item hover-scale" href="#">Accesorios</a>
-                    <div class="navbar-item has-dropdown is-hoverable">
-                        <a class="navbar-link hover-scale">Más</a>
-                        <div class="navbar-dropdown">
-                            <a class="navbar-item">Ofertas</a>
-                            <a class="navbar-item">Novedades</a>
-                        </div>
-                    </div>
+            <div class="navbar-end">
+              <div class="navbar-item">
+                <div class="field">
+                  <p class="control has-icons-left">
+                    <input class="input" type="text" placeholder="Buscar...">
+                    <span class="icon is-small is-left">
+                      <i class="fas fa-search"></i>
+                    </span>
+                  </p>
                 </div>
-
-                <div class="navbar-end">
-                    <div class="navbar-item">
-                        <!-- Barra de búsqueda con animación -->
-                        <div class="field">
-                            <p class="control has-icons-left">
-                                <input class="input hover-scale" type="text" placeholder="Buscar..." style="border-radius: 20px; border: 1px solid #000;">
-                                <span class="icon is-small is-left">
-                                    <i class="fas fa-search"></i>
-                                </span>
-                            </p>
-                        </div>
-                    </div>
-                    <a class="navbar-item hover-rotate-scale" href="#" title="Carrito">
-                        <i class="fas fa-shopping-cart" style="font-size: 1.2em;"></i>
-                    </a>
-                    <a class="navbar-item hover-rotate-scale" href="#" title="Usuario">
-                        <i class="fas fa-user" style="font-size: 1.2em;"></i>
-                    </a>
-                </div>
+              </div>
+              <a class="navbar-item hover-rotate-scale" href="#"><i class="fas fa-shopping-cart"></i></a>
+              <a class="navbar-item hover-rotate-scale" href="#"><i class="fas fa-user"></i></a>
             </div>
+          </div>
         </nav>
 
-        <!-- Sección de Bienvenida -->
-        <section class="hero">
-            <div class="hero-body" style="display: flex; align-items: center; justify-content: flex-start; padding-left: 10%;">
-                <div class="container">
-                    <h1 class="title is-1 has-text-white fade-in" id="hero-title" style="font-weight: 700; text-shadow: 2px 2px 4px rgba(0,0,0,0.5);">
-                        Bienvenido a <span class="accent-red">OUTSIDER</span> <br> Nueva Colección 2025
-                    </h1>
-                    <p class="subtitle is-4 has-text-white fade-in" id="hero-subtitle" style="margin-bottom: 2rem; text-shadow: 1px 1px 2px rgba(0,0,0,0.5);">
-                        Inspírate en las tendencias globales con prendas únicas.
-                    </p>
-                    <!-- Botón con efecto glow y pulse -->
-                    <a href="#" class="button is-large glow-btn pulse-btn hover-scale" style="background: linear-gradient(45deg, #ff6b6b, #000000); color: white; border: none; border-radius: 50px; padding: 1rem 2rem; font-weight: 700;">
-                        Comprar Ahora
-                    </a>
-                </div>
-            </div>
-        </section>
-
-      <!-- Sección de Productos -->
-<section id="productos" class="section has-text-centered">
-  <div class="container">
-    <h2 class="title mb-6">Productos Destacados</h2>
-
-    <!-- Carrusel 3D -->
-    <div class="wrapper">
-      <div class="inner" style="--quantity: 6;">
-        <div class="card" style="--index: 0;--color-card: 255,107,107;">
-          <div class="img"><img src="img/prenda1.jpg" alt="Remera Negra"></div>
-           <div class="card-info">
-                <p class="product-name">Remera Negra</p>
-                <div class="buy-row">
-                    <span class="price">$12.000</span>
-                    <button class="buy-btn">BUY</button>
-                </div>
-            </div>
-        </div>
-        <div class="card" style="--index: 1;--color-card: 255,190,107;">
-          <div class="img"><img src="img/remera1.jpg" alt="Buzo Gris"></div>
-        </div>
-        <div class="card" style="--index: 2;--color-card: 255,255,107;">
-          <div class="img"><img src="img/prenda2.jpg" alt="Campera Cuero"></div>
-        </div>
-        <div class="card" style="--index: 3;--color-card: 107,255,154;">
-          <div class="img"><img src="img/prenda3.jpg" alt="Pantalón Cargo"></div>
-        </div>
-        <div class="card" style="--index: 4;--color-card: 107,255,255;">
-          <div class="img"><img src="img/remera2.jpg" alt="Remera Blanca"></div>
-        </div>
-        <div class="card" style="--index: 5;--color-card: 154,107,255;">
-          <div class="img"><img src="img/campera2.jpg" alt="Campera Verde"></div>
-        </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-<section id="multimedia" class="section">
-    <div class="container">
-        <h2 class="title is-2 has-text-centered has-text-white">
-            Nuestra Esencia en <span class="accent-red">Movimiento</span>
-        </h2>
-        <div id="video-carousel" class="carousel">
-            <div class="item">
-                <video class="is-rounded" autoplay loop muted playsinline>
-                    <source src="img/video1.mp4" type="video/mp4">
-                </video>
-            </div>
-            <div class="item">
-                <video class="is-rounded" autoplay loop muted playsinline>
-                    <source src="img/video2.mp4" type="video/mp4">
-                </video>
-            </div>
-            <div class="item">
-                <video class="is-rounded" autoplay loop muted playsinline>
-                    <source src="img/video3.mp4" type="video/mp4">
-                </video>
-            </div>
-            <div class="item">
-                <video class="is-rounded" autoplay loop muted playsinline>
-                    <source src="img/video4.mp4" type="video/mp4">
-                </video>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Sección de Contacto -->
-<section id="contacto" class="section has-text-centered">
-  <div class="container">
-    <h2 class="title is-2 accent-red">Contacto</h2>
-    <p class="subtitle is-5 mb-6">¿Tenés dudas, consultas o querés hacer un pedido personalizado? ¡Escribinos!</p>
-
-    <div class="columns is-centered">
-      <div class="column is-half glass box p-5">
-
-        <form>
-          <!-- Nombre -->
-         <div class="field">
-            <label class="label has-text-left">Nombre</label>
-            <div class="control has-icons-left">
-                <input class="input" type="text" placeholder="Tu nombre completo" required>
-                <span class="icon is-small is-left">
-                <i class="fas fa-user"></i>
-                </span>
-            </div>
-         </div>
-
-
-          
-            <!-- Email con icono -->
-          <div class="field">
-            <label class="label has-text-left">Email</label>
-            <div class="control has-icons-left">
-                <input class="input" type="email" placeholder="tucorreo@email.com" required>
-                <span class="icon is-small is-left">
-                <i class="fas fa-envelope"></i>
-                </span>
-            </div>
-          </div>
-
-
-          <!-- Mensaje -->
-          <div class="field">
-            <label class="label has-text-left">Mensaje</label>
-            <div class="control">
-              <textarea class="textarea" placeholder="Escribí tu mensaje..." required></textarea>
-            </div>
-          </div>
-
-          <!-- Botón -->
-          <div class="field has-text-centered mt-5">
-            <button class="button is-link glow-btn pulse-btn" 
-                    style="background-color: #ff6b6b; border: none; color: white; border-radius: 25px; padding: 0.75rem 2rem;">
-              <i class="fas fa-paper-plane mr-2"></i> Enviar
-            </button>
-          </div>
-        </form>
-        
-        <!-- Botón alternativo para abrir Google Form -->
-        <div class="mt-5 has-text-centered">
-            <p class="mb-3">También podés llenar nuestro formulario de Google:</p>
-            <a href="https://forms.gle/fsikoFsHaxWXQzUS7" target="_blank" 
-            class="button is-danger is-outlined hover-scale">
-            <i class="fas fa-external-link-alt mr-2"></i> Abrir Formulario Google
+      <!-- Sección de Bienvenida -->
+      <section class="hero" id="hero">
+        <canvas id="hero-canvas"></canvas>
+        <div class="hero-body">
+          <div class="container hero-content">
+            <h1 class="title is-1 has-text-white fade-in" id="hero-title">
+              Bienvenido a <span class="accent-red">OUTSIDER</span> <br> Nueva Colección 2025
+            </h1>
+            <p class="subtitle is-4 has-text-white fade-in" id="hero-subtitle">
+              Inspirate en las tendencias globales con prendas únicas.
+            </p>
+            <a href="#" class="button is-large glow-btn pulse-btn hover-scale">
+              Explore collection
             </a>
+          </div>
         </div>
+      </section>
 
 
-      </div>
-    </div>
+            <!-- Sección de Productos -->
+      <section id="productos" class="section has-text-centered">
+        <div class="container">
+          <h2 class="title mb-6">Productos Destacados</h2>
 
-    <!-- Información adicional -->
-    <div class="columns is-centered mt-6">
-      <div class="column is-half has-text-centered">
-        <p><i class="fas fa-map-marker-alt accent-red mr-2"></i><strong>Dirección:</strong> Pasaje Famatina 2260, Río Cuarto, Córdoba</p>
-        <p><i class="fas fa-phone accent-red mr-2"></i><strong>Teléfono:</strong> +54 9 3584388735</p>
-        <p><i class="fas fa-envelope accent-red mr-2"></i><strong>Email:</strong> outsider.cba@gmail.com</p>
-      </div>
-    </div>
+          <!-- Carrusel 3D -->
+          <div class="wrapper">
+            <div class="inner" style="--quantity: 6;">
+              <div class="card" style="--index: 0;--color-card: 255,107,107;">
+                <div class="img"><img src="img/prenda1.jpg" alt="Remera Negra"></div>
+                <div class="card-info">
+                      <p class="product-name">Remera Negra</p>
+                      <div class="buy-row">
+                          <span class="price">$12.000</span>
+                          <button class="buy-btn">BUY</button>
+                      </div>
+                  </div>
+              </div>
+              <div class="card" style="--index: 1;--color-card: 255,190,107;">
+                <div class="img"><img src="img/remera1.jpg" alt="Buzo Gris"></div>
+              </div>
+              <div class="card" style="--index: 2;--color-card: 255,255,107;">
+                <div class="img"><img src="img/prenda2.jpg" alt="Campera Cuero"></div>
+              </div>
+              <div class="card" style="--index: 3;--color-card: 107,255,154;">
+                <div class="img"><img src="img/prenda3.jpg" alt="Pantalón Cargo"></div>
+              </div>
+              <div class="card" style="--index: 4;--color-card: 107,255,255;">
+                <div class="img"><img src="img/remera2.jpg" alt="Remera Blanca"></div>
+              </div>
+              <div class="card" style="--index: 5;--color-card: 154,107,255;">
+                <div class="img"><img src="img/campera2.jpg" alt="Campera Verde"></div>
+              </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="multimedia" class="section">
+          <div class="container">
+              <h2 class="title is-2 has-text-centered has-text-white">
+                  Nuestra Esencia en <span class="accent-red">Movimiento</span>
+              </h2>
+              <div id="video-carousel" class="carousel">
+                  <div class="item">
+                      <video class="is-rounded" autoplay loop muted playsinline>
+                          <source src="img/video1.mp4" type="video/mp4">
+                      </video>
+                  </div>
+                  <div class="item">
+                      <video class="is-rounded" autoplay loop muted playsinline>
+                          <source src="img/video2.mp4" type="video/mp4">
+                      </video>
+                  </div>
+                  <div class="item">
+                      <video class="is-rounded" autoplay loop muted playsinline>
+                          <source src="img/video3.mp4" type="video/mp4">
+                      </video>
+                  </div>
+                  <div class="item">
+                      <video class="is-rounded" autoplay loop muted playsinline>
+                          <source src="img/video4.mp4" type="video/mp4">
+                      </video>
+                  </div>
+              </div>
+          </div>
+      </section>
 
-  </div>
-</section>
-        <script src="https://cdn.jsdelivr.net/npm/bulma-carousel@4.0.3/dist/js/bulma-carousel.min.js"></script>
-        <script src="js/script.js"></script>
-    </body>
+      <!-- Sección de Contacto -->
+      <section id="contacto" class="section has-text-centered">
+        <div class="container">
+          <h2 class="title is-2 accent-red">Contacto</h2>
+          <p class="subtitle is-5 mb-6">¿Tenés dudas, consultas o querés hacer un pedido personalizado? ¡Escribinos!</p>
+
+          <div class="columns is-centered">
+            <div class="column is-half glass box p-5">
+
+              <form>
+                <!-- Nombre -->
+              <div class="field">
+                  <label class="label has-text-left">Nombre</label>
+                  <div class="control has-icons-left">
+                      <input class="input" type="text" placeholder="Tu nombre completo" required>
+                      <span class="icon is-small is-left">
+                      <i class="fas fa-user"></i>
+                      </span>
+                  </div>
+              </div>
+
+
+                
+                  <!-- Email con icono -->
+                <div class="field">
+                  <label class="label has-text-left">Email</label>
+                  <div class="control has-icons-left">
+                      <input class="input" type="email" placeholder="tucorreo@email.com" required>
+                      <span class="icon is-small is-left">
+                      <i class="fas fa-envelope"></i>
+                      </span>
+                  </div>
+                </div>
+
+
+                <!-- Mensaje -->
+                <div class="field">
+                  <label class="label has-text-left">Mensaje</label>
+                  <div class="control">
+                    <textarea class="textarea" placeholder="Escribí tu mensaje..." required></textarea>
+                  </div>
+                </div>
+
+                <!-- Botón -->
+                <div class="field has-text-centered mt-5">
+                  <button class="button is-link glow-btn pulse-btn" 
+                          style="background-color: #ff6b6b; border: none; color: white; border-radius: 25px; padding: 0.75rem 2rem;">
+                    <i class="fas fa-paper-plane mr-2"></i> Enviar
+                  </button>
+                </div>
+              </form>
+              
+              <!-- Botón alternativo para abrir Google Form -->
+              <div class="mt-5 has-text-centered">
+                  <p class="mb-3">También podés llenar nuestro formulario de Google:</p>
+                  <a href="https://forms.gle/fsikoFsHaxWXQzUS7" target="_blank" 
+                  class="button is-danger is-outlined hover-scale">
+                  <i class="fas fa-external-link-alt mr-2"></i> Abrir Formulario Google
+                  </a>
+              </div>
+
+
+            </div>
+          </div>
+
+          <!-- Información adicional -->
+          <div class="columns is-centered mt-6">
+            <div class="column is-half has-text-centered">
+              <p><i class="fas fa-map-marker-alt accent-red mr-2"></i><strong>Dirección:</strong> Pasaje Famatina 2260, Río Cuarto, Córdoba</p>
+              <p><i class="fas fa-phone accent-red mr-2"></i><strong>Teléfono:</strong> +54 9 3584388735</p>
+              <p><i class="fas fa-envelope accent-red mr-2"></i><strong>Email:</strong> outsider.cba@gmail.com</p>
+            </div>
+          </div>
+
+        </div>
+      </section>
+      <script src="https://cdn.jsdelivr.net/npm/bulma-carousel@4.0.3/dist/js/bulma-carousel.min.js"></script>
+      <script src="js/script.js"></script>
+  </body>
 </html>
