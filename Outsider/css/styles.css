@@ -553,3 +553,77 @@ body {
     50% { background-position: 100% 50%; }
     100% { background-position: 0% 50%; }
 }
+/* estilo general del footer */
+footer {
+    background-color: #111;
+    color: #ddd;
+    text-align: center;
+    padding: 0.5rem 1rem 0.7rem 1rem;  /* top right bottom left */
+    margin-top: auto;
+}
+
+
+.footer-contenedor {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* iconos de redes */
+.redes {
+    margin-bottom: 1rem;
+}
+
+.redes .icono {
+    color: #ddd;
+    margin: 0 10px;
+    font-size: 1.8rem;
+    transition: 0.3s;
+}
+
+/* efectos hover */
+.redes .instagram:hover {
+    color: #e4405f;
+}
+.redes .facebook:hover {
+    color: #1877f2;
+}
+.redes .youtube:hover {
+    color: #ff0000;
+}
+
+/* creditos */
+.creditos {
+    font-size: 0.9rem;
+    letter-spacing: 0.5px;
+}
+
+/* responsive */
+@media (max-width: 600px) {
+    .redes .icono {
+        font-size: 1.5rem;
+        margin: 0 8px;
+    }
+    .creditos {
+        font-size: 0.8rem;
+    }
+}
+/* anclar footer al fondo */
+html, body {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* el main o el contenido debe crecer */
+main {
+    flex: 1;
+}
+
+/* footer abajo siempre */
+footer {
+    margin-top: auto;
+}
