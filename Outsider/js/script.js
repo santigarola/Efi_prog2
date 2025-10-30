@@ -77,3 +77,5 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
+// mostrar automaticamente el año actual
+document.getElementById("anio").textContent = new Date().getFullYear();
