@@ -40,4 +40,40 @@ document.addEventListener("mousemove", (e) => {
     hero.style.transform = `translate(${moveX}px, ${moveY}px)`;
 });
 
+// Navbar transparente -> blanca al hacer scroll
+window.addEventListener("scroll", () => {
+    const navbar = document.querySelector(".navbar");
+    if (window.scrollY > 50) {
+    navbar.classList.add("is-scrolled");
+    } else {
+    navbar.classList.remove("is-scrolled");
+    }
+});
+
+// Añadimos clase para mobile cuando navbar es transparente
+const navbar = document.querySelector(".navbar");
+
+function handleNavbarScroll() {
+    if (window.scrollY > 50) {
+    navbar.classList.remove("is-transparent-mobile");
+    navbar.classList.add("is-scrolled");
+    } else {
+    navbar.classList.add("is-transparent-mobile");
+    navbar.classList.remove("is-scrolled");
+    }
+}
+
+window.addEventListener("scroll", handleNavbarScroll);
+document.addEventListener("DOMContentLoaded", handleNavbarScroll);
+
+
+// Activar el menú hamburguesa en Bulma
+document.addEventListener('DOMContentLoaded', () => {
+    const burger = document.querySelector('.navbar-burger');
+    const menu = document.querySelector('#navbarMenu');
+    burger.addEventListener('click', () => {
+        burger.classList.toggle('is-active');
+        menu.classList.toggle('is-active');
+    });
+});
 

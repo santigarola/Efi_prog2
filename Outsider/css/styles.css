@@ -1,5 +1,5 @@
 /* ===========================
-  1. Reset y Tipografía
+  Reset y Tipografía
 =========================== */
 body {
     font-family: 'Montserrat', sans-serif;
@@ -11,7 +11,7 @@ body {
 }
 
 /* ===========================
-  2. Colores de acento
+  Colores de acento
 =========================== */
 .accent-red {
     color: #ff6b6b;
@@ -22,7 +22,7 @@ body {
 }
 
 /* ===========================
-  3. Glassmorphism
+  Glassmorphism
 =========================== */
 .glass {
     background: rgba(255, 255, 255, 0.9);
@@ -31,7 +31,7 @@ body {
 }
 
 /* ===========================
-  4. Animaciones generales
+  Animaciones generales
 =========================== */
 .fade-in {
     opacity: 0;
@@ -65,7 +65,7 @@ body {
 }
 
 /* ===========================
-  5. Hover Effects
+  Hover Effects
 =========================== */
 .hover-scale {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -83,64 +83,147 @@ body {
 }
 
 /* ===========================
-  6. Botones
+  Boton bienvenida
 =========================== */
-.glow-btn {
-    position: relative;
-    overflow: hidden;
-    transition: box-shadow 0.3s ease;
-}
-.glow-btn:hover {
-    box-shadow: 0 0 20px rgba(255, 107, 107, 0.8);
-}
-.glow-btn::after {
-    content: '';
-    position: absolute;
-    top: -10px; left: -10px;
-    width: 100%; height: 100%;
-    border-radius: 50px;
-    background: radial-gradient(circle, rgba(255,107,107,0.5) 0%, transparent 70%);
-    opacity: 0;
-    transition: opacity 0.3s ease, transform 0.3s ease;
-}
-.glow-btn:hover::after {
-    opacity: 1;
-    transform: scale(1.3);
+
+.btn-neon {
+  padding: 0.8rem 2rem;
+  font-weight: 700;
+  font-size: 1.2rem;
+  color: #ff6b6b;
+  background: #111;
+  border: 2px solid #ff6b6b;
+  border-radius: 25px;
+  box-shadow: 0 0 10px #ff6b6b, 0 0 20px #ff6b6b;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
 }
 
-.pulse-btn {
-    animation: pulse 2s infinite;
+.btn-neon:hover {
+  color: #111;
+  background: #ff6b6b;
+  box-shadow: 0 0 15px #ff6b6b, 0 0 30px #ff6b6b;
+  transform: scale(1.05);
 }
 
 /* ===========================
-  7. Navbar
+  Barra superior animada infinita con efecto fade
+=========================== */
+.topbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 20px;
+  background-color: #000;
+  color: #fff;
+  overflow: hidden;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  font-size: 0.8rem;
+  letter-spacing: 1px;
+  font-weight: 500;
+}
+
+/* efecto de fade en bordes */
+.topbar-inner {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.topbar-inner::before,
+.topbar-inner::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 80px; /* ancho del desvanecimiento */
+  height: 100%;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.topbar-inner::before {
+  left: 0;
+  background: linear-gradient(to right, #000 20%, transparent 100%);
+}
+
+.topbar-inner::after {
+  right: 0;
+  background: linear-gradient(to left, #000 20%, transparent 100%);
+}
+
+/* Pista del texto en movimiento */
+.topbar-track {
+  display: flex;
+  gap: 0.5rem;
+  white-space: nowrap;
+  animation: scrollText 30s linear infinite;
+  will-change: transform;
+}
+
+.topbar-track span {
+  display: inline-block;
+}
+
+/* Animación infinita fluida */
+@keyframes scrollText {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* Ajuste del navbar */
+.navbar.is-fixed-top {
+  top: 20px;
+}
+
+/* ===========================
+  Navbar transparente con transición al hacer scroll
 =========================== */
 
 .navbar {
-  background-color: white !important;
-  transition: background-color 0.3s ease, box-shadow 0.3s ease;
-  box-shadow: none;
+  background-color: transparent;
+  transition: background-color 0.4s ease, box-shadow 0.4s ease;
 }
 
-.navbar-item:hover {
-    color: #ff6b6b !important;
+.navbar.is-scrolled {
+  background-color: #fff !important;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
 }
 
-.navbar-link:hover {
-    color: #ff6b6b !important; /* mismo efecto hover */
+/* Opcional: color del texto cuando navbar es transparente */
+.navbar a.navbar-item {
+  color: #fff;
+  transition: color 0.3s ease;
 }
 
-.navbar-link::after {
-    border-color: #000 !important; 
+.navbar.is-scrolled a.navbar-item {
+  color: #111;
 }
 
-.navbar-link:hover::after {
-    border-color: #ff6b6b !important; 
+/* Para que el botón combine */
+.navbar.is-scrolled .button.is-dark {
+  background-color: #111;
+  color: #fff;
+}
+
+/* Navbar transparente: hover para que el texto se vea */
+.navbar:not(.is-scrolled) .navbar-item:hover {
+  color: #000 !important; /* texto negro al pasar el cursor */
+}
+
+.navbar:not(.is-scrolled) .navbar-link:hover::after {
+  border-color: transparent !important; /* eliminar borde que tapaba el texto */
 }
 
 
 /* ===========================
-  8. Hero Section
+  Hero Section
 =========================== */
 .hero {
     position: relative;
@@ -194,7 +277,7 @@ body {
 }
 
 /* ===========================
-  9. Sección Productos
+  Sección Productos
 =========================== */
 #productos {
   background-color: #cec9c3;
@@ -301,7 +384,7 @@ body {
 }
 
 /* ===========================
-  10. Sección Contacto
+  Sección Contacto
 =========================== */
 #contacto {
   background-color: #fff;
@@ -347,7 +430,7 @@ body {
 }
 
 /* ===========================
-  11. Sección Multimedia / Videos
+  Sección Multimedia / Videos
 =========================== */
 #multimedia {
   background-color: #1a1a1a;
@@ -401,7 +484,7 @@ body {
 .carousel-nav.is-next { right: 20px; }
 
 /* ===========================
-  12. Animación de gradiente hero
+  Animación de gradiente hero
 =========================== */
 @keyframes gradientBG {
     0% { background-position: 0% 50%; }
