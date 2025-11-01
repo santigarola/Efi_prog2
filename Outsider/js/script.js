@@ -79,3 +79,21 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // mostrar automaticamente el año actual
 document.getElementById("anio").textContent = new Date().getFullYear();
+
+
+const track = document.querySelector('.carousel-track');
+const prevBtn = document.querySelector('.carousel-nav.is-prev');
+const nextBtn = document.querySelector('.carousel-nav.is-next');
+const verColeccionBtn = document.getElementById('ver-coleccion');
+
+if (track && verColeccionBtn && prevBtn && nextBtn) {
+    // Movimiento lateral del carrusel
+    prevBtn.addEventListener('click', () => {
+        track.scrollBy({ left: -300, behavior: 'smooth' });
+    });
+
+    nextBtn.addEventListener('click', () => {
+        track.scrollBy({ left: 300, behavior: 'smooth' });
+    });
+}
+
