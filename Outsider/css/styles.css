@@ -383,13 +383,11 @@ body {
   transform: scale(1.05);
 }
 
-/* ===========================
-  Sección Contacto
-=========================== */
+/* =========================== Sección Contacto =========================== */
 #contacto {
-  background-color: #fff;
-  padding-top: 6rem;
-  padding-bottom: 6rem;
+  background-color: #2c2c2c;
+  padding: 6rem 2rem;
+  color: #000;
 }
 
 #contacto .title {
@@ -398,61 +396,69 @@ body {
   letter-spacing: 2px;
 }
 
-#contacto .glass {
-  background: rgba(255, 255, 255, 0.8);
-  backdrop-filter: blur(12px);
-  border-radius: 15px;
-  box-shadow: 0 8px 25px rgba(0,0,0,0.1);
-  animation: fadeInUp 1s ease;
+/* === Diseño general de columnas === */
+#contacto .contact-grid {
+  display: flex;
+  justify-content: center;
+  align-items: stretch; /* Ambas columnas misma altura */
+  gap: 2rem;
+  max-width: 1600px;
+  margin: 0 auto;
 }
 
+/* === Tarjetas === */
+#contacto .glass,
+#contacto .info-card {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-radius: 10px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+  padding: 2rem;
+}
+
+/* Fondo del formulario */
+#contacto .glass {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(10px);
+}
+
+/* Fondo del bloque de información */
+#contacto .info-card {
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  text-align: left;
+}
+
+/* Forzar altura igual y alineación arriba/abajo */
+#contacto .contact-grid > * {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* --- Campos del formulario --- */
 #contacto input,
 #contacto textarea {
   border: 1px solid #ccc;
   border-radius: 8px;
   transition: all 0.3s ease;
 }
+
 #contacto input:focus,
 #contacto textarea:focus {
   border-color: #ff6b6b;
-  box-shadow: 0 0 5px rgba(255,107,107,0.5);
+  box-shadow: 0 0 5px rgba(255, 107, 107, 0.5);
 }
 
+/* --- Botón --- */
 #contacto button:hover {
   transform: scale(1.05);
-  box-shadow: 0 0 15px rgba(255,107,107,0.7);
-}
-
-@media (max-width: 768px) {
-  #contacto .column.is-half {
-    width: 100%;
-  }
-}
-
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(40px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-#contacto .glass {
-  animation: fadeInUp 1.2s ease forwards;
-}
-
-#contacto input:focus,
-#contacto textarea:focus {
-  border-color: #ff6b6b;
-  box-shadow: 0 0 10px rgba(255, 107, 107, 0.6);
-  transition: box-shadow 0.3s ease, border-color 0.3s ease;
+  box-shadow: 0 0 15px rgba(255, 107, 107, 0.7);
 }
 
 #contacto button {
-  transition: transform 0.3s ease;
   animation: float 3s ease-in-out infinite;
 }
 
@@ -461,35 +467,25 @@ body {
   50% { transform: translateY(-5px); }
 }
 
-#contacto button:hover {
-  transform: scale(1.07);
-  box-shadow: 0 0 20px rgba(255, 107, 107, 0.8);
+/* --- Mapa --- */
+#contacto .map-container {
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
 }
 
-#contacto button.pulse {
-  animation: pulse 2s infinite;
-}
+/* --- Responsive --- */
+@media (max-width: 1024px) {
+  #contacto .contact-grid {
+    flex-direction: column;
+    align-items: stretch;
+  }
 
-@keyframes pulse {
-  0% { box-shadow: 0 0 0 0 rgba(255, 107, 107, 0.7); }
-  70% { box-shadow: 0 0 0 15px rgba(255, 107, 107, 0); }
-  100% { box-shadow: 0 0 0 0 rgba(255, 107, 107, 0); }
+  #contacto .info-card {
+    margin-top: 2rem;
+    text-align: center;
+  }
 }
-
-.control.has-icons-left:focus-within .icon i {
-  transform: rotate(15deg);
-  color: #ff6b6b;
-  transition: transform 0.3s ease, color 0.3s ease;
-}
-
-#contacto .title {
-  animation: slideDown 1s ease forwards;
-}
-@keyframes slideDown {
-  from { opacity: 0; transform: translateY(-20px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
 
 /* ===========================
   Sección Multimedia / Videos
@@ -560,6 +556,25 @@ footer {
     text-align: center;
     padding: 0.5rem 1rem 0.7rem 1rem;  /* top right bottom left */
     margin-top: auto;
+}
+
+/* ==== BOTÓN EQUIPO (footer) ==== */
+.boton-equipo {
+  color: #ff6b6b;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  border: 1px solid #ff6b6b;
+  padding: 6px 12px;
+  border-radius: 20px;
+  margin-left: 6px;
+}
+
+.boton-equipo:hover {
+  background-color: #ff6b6b;
+  color: white;
+  box-shadow: 0 0 10px rgba(255,107,107,0.7);
+  transform: scale(1.05);
 }
 
 
