@@ -280,10 +280,14 @@ body {
   Sección Productos
 =========================== */
 #productos {
-  background-color: #cec9c3;
+  background-color: #040404;
   padding-top: 6rem;
   padding-bottom: 10rem;
 }
+#productos h2.title {
+  color: #ff6b6b !important;
+}
+
 
 /* Carrusel 3D */
 .wrapper {
@@ -322,8 +326,16 @@ body {
   overflow: hidden;
   transform: rotateY(calc((360deg / var(--quantity)) * var(--index)))
     translateZ(var(--translateZ));
-  transition: transform 0.5s ease;
+  transition: transform 0.3s ease;
 }
+
+
+.img {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
 
 .img img {
   width: 100%;
@@ -333,15 +345,15 @@ body {
   transition: transform 0.3s ease;
 }
 .card:hover img {
-  transform: scale(1.5);
+  transform: scale(1.1);
 }
 
 .card-info {
-  position: absolute;
+  position:absolute;
   bottom: -6px;
   left: 0;
   width: 100%;
-  background: rgba(228, 225, 225, 0.9);
+  background: rgba(167, 166, 166, 0.9);
   padding: 0.5rem;
   text-align: center;
   font-size: 0.9rem;
@@ -363,7 +375,7 @@ body {
 
 .price {
   font-weight: bold;
-  color: #ff6b6b;
+  color: #1d1c1c;
   font-size: 0.9rem;
 }
 
