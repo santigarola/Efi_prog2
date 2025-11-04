@@ -1,45 +1,3 @@
-document.addEventListener('DOMContentLoaded', () => {
-    
-    // Toggle del navbar burger en móviles
-    const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
-    if ($navbarBurgers.length > 0) {
-        $navbarBurgers.forEach(el => {
-            el.addEventListener('click', () => {
-                const target = el.dataset.target;
-                const $target = document.getElementById(target);
-                el.classList.toggle('is-active');
-                $target.classList.toggle('is-active');
-            });
-        });
-    }
-
-    // Animaciones de entrada 
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('visible');
-            }
-        });
-    });
-    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
-
-    bulmaCarousel.attach('#video-carousel', {
-        slidesToScroll: 1,
-        slidesToShow: 3,
-        loop: true,
-        autoplay: true,
-        autoplaySpeed: 4000,
-    });
-});
-
-// Efecto parallax al mover el mouse
-const hero = document.querySelector(".hero-content");
-document.addEventListener("mousemove", (e) => {
-    const moveX = (e.clientX - window.innerWidth / 2) * 0.02;
-    const moveY = (e.clientY - window.innerHeight / 2) * 0.02;
-    hero.style.transform = `translate(${moveX}px, ${moveY}px)`;
-});
-
 // Navbar transparente -> blanca al hacer scroll
 window.addEventListener("scroll", () => {
     const navbar = document.querySelector(".navbar");
@@ -50,50 +8,91 @@ window.addEventListener("scroll", () => {
     }
 });
 
-// Añadimos clase para mobile cuando navbar es transparente
-const navbar = document.querySelector(".navbar");
+// Toggle del menú hamburguesa en móviles 
+document.addEventListener("DOMContentLoaded", () => {
+    const burger = document.querySelector(".navbar-burger");
+    const menu = document.querySelector("#navbarMenu");
 
-function handleNavbarScroll() {
-    if (window.scrollY > 50) {
-    navbar.classList.remove("is-transparent-mobile");
-    navbar.classList.add("is-scrolled");
-    } else {
-    navbar.classList.add("is-transparent-mobile");
-    navbar.classList.remove("is-scrolled");
+    if (burger && menu) {
+    burger.addEventListener("click", () => {
+        burger.classList.toggle("is-active");
+        menu.classList.toggle("is-active");
+    });
     }
-}
 
-window.addEventListener("scroll", handleNavbarScroll);
-document.addEventListener("DOMContentLoaded", handleNavbarScroll);
+    // Boton NewCollection
+document.getElementById('btnNewCollection').addEventListener('click', () => {
+    const section = document.getElementById('new-collection');
+    section.scrollIntoView({ behavior: 'smooth' });
+});
+
+  // Animaciones de entrada
+    const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+        entry.target.classList.add("visible");
+        }
+    });
+    });
 
 
-// Activar el menú hamburguesa en Bulma
-document.addEventListener('DOMContentLoaded', () => {
-    const burger = document.querySelector('.navbar-burger');
+    // Menu hamburguesa cierra al tocar una opcion
+document.querySelectorAll('.navbar-item').forEach(item => {
+    item.addEventListener('click', () => {
     const menu = document.querySelector('#navbarMenu');
-    burger.addEventListener('click', () => {
-        burger.classList.toggle('is-active');
-        menu.classList.toggle('is-active');
+    const burger = document.querySelector('.navbar-burger');
+
+    if (menu.classList.contains('is-active')) {
+        menu.classList.remove('is-active');
+        burger.classList.remove('is-active');
+    }
     });
 });
 
-// mostrar automaticamente el año actual
-document.getElementById("anio").textContent = new Date().getFullYear();
 
-
-const track = document.querySelector('.carousel-track');
-const prevBtn = document.querySelector('.carousel-nav.is-prev');
-const nextBtn = document.querySelector('.carousel-nav.is-next');
-const verColeccionBtn = document.getElementById('ver-coleccion');
-
-if (track && verColeccionBtn && prevBtn && nextBtn) {
-    // Movimiento lateral del carrusel
-    prevBtn.addEventListener('click', () => {
-        track.scrollBy({ left: -300, behavior: 'smooth' });
+document.querySelectorAll(".fade-in").forEach((el) => observer.observe(el));
+  // Carrusel (si existe el componente)
+    if (typeof bulmaCarousel !== "undefined") {
+    bulmaCarousel.attach("#video-carousel", {
+        slidesToScroll: 1,
+        slidesToShow: 3,
+        loop: true,
+        autoplay: true,
+        autoplaySpeed: 4000,
     });
+    }
 
-    nextBtn.addEventListener('click', () => {
-        track.scrollBy({ left: 300, behavior: 'smooth' });
+  // Mostrar automáticamente el año actual en el footer
+    const yearSpan = document.getElementById("anio");
+    if (yearSpan) {
+    yearSpan.textContent = new Date().getFullYear();
+    }
+});
+
+
+// Efecto parallax al mover el mouse (hero section)
+const hero = document.querySelector(".hero-content");
+if (hero) {
+    document.addEventListener("mousemove", (e) => {
+    const moveX = (e.clientX - window.innerWidth / 2) * 0.02;
+    const moveY = (e.clientY - window.innerHeight / 2) * 0.02;
+    hero.style.transform = `translate(${moveX}px, ${moveY}px)`;
     });
 }
 
+
+// Movimiento lateral del carrusel
+const track = document.querySelector(".carousel-track");
+const prevBtn = document.querySelector(".carousel-nav.is-prev");
+const nextBtn = document.querySelector(".carousel-nav.is-next");
+const verColeccionBtn = document.getElementById("ver-coleccion");
+
+if (track && verColeccionBtn && prevBtn && nextBtn) {
+    prevBtn.addEventListener("click", () => {
+    track.scrollBy({ left: -300, behavior: "smooth" });
+    });
+
+    nextBtn.addEventListener("click", () => {
+    track.scrollBy({ left: 300, behavior: "smooth" });
+    });
+}
