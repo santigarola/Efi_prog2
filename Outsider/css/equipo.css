@@ -1,91 +1,166 @@
-body {
-  font-family: 'Montserrat', sans-serif;
-  background: linear-gradient(135deg, #1f1f1f, #2c2c2c);
-  color: white;
-  text-align: center;
-  padding: 50px 20px;
+/* === Reset y fuentes === */
+* {
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
 }
 
-h1 {
-  font-size: 2.5rem;
-  margin-bottom: 2.5rem;
-  text-transform: uppercase;
-  color: #ff6b6b;
-  letter-spacing: 2px;
+/* === Fondo general === */
+body {
+  background: #f5f7fa;
+  color: #2e2e2e;
 }
 
-.equipo-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 2rem;
-}
-
-.card {
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(8px);
-  border-radius: 15px;
-  padding: 2rem;
-  width: 280px;
+/* === Sección general === */
+.team-section {
   text-align: center;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  padding: 80px 0;
 }
 
-.card:hover {
+/* === Título principal === */
+.team-section .title {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  color: #222;
+  position: relative;
+  margin-bottom: 50px;
+  font-size: 2.4rem;
+}
+
+.team-section .highlight {
+  color: #e63946;
+  position: relative;
+}
+
+.team-section .highlight::after {
+  content: "";
+  position: absolute;
+  bottom: -6px;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: #e63946;
+  border-radius: 2px;
+}
+
+/* === Contenedor general (usa grid para mantener tamaños parejos) === */
+.team-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  justify-items: center;
+  align-items: stretch;
+}
+
+/* === Tarjetas del equipo === */
+.team-card {
+  background: #fff;
+  border-radius: 16px;
+  border: 1px solid #d1d1d1; /* 🔹 Borde gris */
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  transition: all 0.3s ease;
+  width: 100%;
+  max-width: 300px;
+  height: 480px; /* 🔹 Mismo alto para todos */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.team-card:hover {
   transform: translateY(-8px);
-  box-shadow: 0 8px 25px rgba(255, 107, 107, 0.4);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+  border-color: #bbb;
 }
 
-.card img {
-  width: 120px;
-  height: 120px;
+/* === Imagen del integrante === */
+.team-img {
+  overflow: hidden;
+  height: 220px;
+}
+
+.team-img img {
+  width: 100%;
+  height: 100%;
   object-fit: cover;
-  border-radius: 50%;
-  margin-bottom: 1rem;
-  border: 3px solid #ff6b6b;
+  transition: transform 0.5s ease;
 }
 
-.card h2 {
-  color: #fff;
-  font-size: 1.3rem;
-  margin: 0.5rem 0;
+.team-card:hover .team-img img {
+  transform: scale(1.05);
 }
 
-.card h3 {
-  color: #ff6b6b;
-  font-weight: 600;
+/* === Nombre y rol === */
+.team-card h2 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-top: 18px;
+  color: #222;
+}
+
+.team-card h3 {
   font-size: 1rem;
-  margin-bottom: 1rem;
+  font-weight: 500;
+  color: #e63946;
+  margin-top: 4px;
+  margin-bottom: 12px;
 }
 
-.card p {
-  font-size: 0.9rem;
-  color: #ddd;
-  line-height: 1.4;
-  margin-bottom: 1.2rem;
+/* === Descripción === */
+.team-card p {
+  font-size: 0.95rem;
+  color: #555;
+  line-height: 1.5;
+  padding: 0 15px;
+  flex-grow: 1; /* 🔹 Hace que se estire para ocupar espacio */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 }
 
-.social-icons a {
-  color: #ff6b6b;
-  font-size: 1.2rem;
+/* === Redes sociales === */
+.team-social {
+  margin-bottom: 15px;
+}
+
+.team-social a {
+  color: #555;
   margin: 0 10px;
-  transition: color 0.3s, transform 0.3s;
+  font-size: 1.25rem;
+  transition: all 0.3s ease;
 }
 
-.social-icons a:hover {
-  color: #fff;
-  transform: scale(1.2);
+.team-social a:hover {
+  color: #e63946;
+  transform: translateY(-3px);
 }
 
+/* === Animaciones suaves === */
+.animate__fadeInUp {
+  --animate-duration: 0.9s;
+}
+
+/* === Responsividad === */
 @media (max-width: 768px) {
-  .equipo-container {
-    flex-direction: column;
-    align-items: center;
+  .team-container {
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
   }
 
-  .card {
-    width: 90%;
+  .team-card {
+    height: 440px;
+  }
+
+  .team-img {
+    height: 200px;
+  }
+}
+
+@media (max-width: 480px) {
+  .team-container {
+    grid-template-columns: 1fr;
   }
 }
