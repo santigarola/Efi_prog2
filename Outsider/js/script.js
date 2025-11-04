@@ -35,7 +35,6 @@ document.getElementById('btnNewCollection').addEventListener('click', () => {
     });
     });
 
-
     // Menu hamburguesa cierra al tocar una opcion
 document.querySelectorAll('.navbar-item').forEach(item => {
     item.addEventListener('click', () => {
@@ -48,7 +47,6 @@ document.querySelectorAll('.navbar-item').forEach(item => {
     }
     });
 });
-
 
 document.querySelectorAll(".fade-in").forEach((el) => observer.observe(el));
   // Carrusel (si existe el componente)
@@ -68,8 +66,6 @@ document.querySelectorAll(".fade-in").forEach((el) => observer.observe(el));
     yearSpan.textContent = new Date().getFullYear();
     }
 });
-
-
 // Efecto parallax al mover el mouse (hero section)
 const hero = document.querySelector(".hero-content");
 if (hero) {
@@ -79,8 +75,6 @@ if (hero) {
     hero.style.transform = `translate(${moveX}px, ${moveY}px)`;
     });
 }
-
-
 // Movimiento lateral del carrusel
 const track = document.querySelector(".carousel-track");
 const prevBtn = document.querySelector(".carousel-nav.is-prev");
@@ -96,3 +90,18 @@ if (track && verColeccionBtn && prevBtn && nextBtn) {
     track.scrollBy({ left: 300, behavior: "smooth" });
     });
 }
+// Animacion de expansion del logo en el footer 
+const img = document.querySelector(".img-expand");
+const footer = document.querySelector("footer");
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+        img.classList.add("show");
+    }
+  });
+},{ threshold: 0.4 
+
+});
+
+observer.observe(footer)
