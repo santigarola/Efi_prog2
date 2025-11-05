@@ -428,7 +428,7 @@ html {
 #contacto .contact-grid {
   display: flex;
   justify-content: center;
-  align-items: stretch; /* Ambas columnas misma altura */
+  align-items: stretch;
   gap: 2rem;
   max-width: 1600px;
   margin: 0 auto;
@@ -565,7 +565,6 @@ html {
   border-color: #ff6b6b;
   transform: scale(1.1);
 }
-
 .carousel-nav.is-prev { left: 20px; }
 .carousel-nav.is-next { right: 20px; }
 
@@ -802,4 +801,3 @@ footer {
   top: 50%;
   transform: translateY(-50%);
 }
-
