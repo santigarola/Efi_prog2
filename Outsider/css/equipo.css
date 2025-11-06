@@ -143,6 +143,24 @@ body {
   --animate-duration: 0.9s;
 }
 
+/* === Botón de volver === */
+.volver-btn {
+  background-color: #e63946;
+  color: #fff;
+  border: none;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+  border-radius: 8px;
+}
+
+.volver-btn:hover {
+  background-color: #b92b36;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(230, 57, 70, 0.3);
+}
+
+
 /* === Responsividad === */
 @media (max-width: 768px) {
   .team-container {
